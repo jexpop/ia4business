@@ -77,11 +77,19 @@ def route(starting_location, ending_location):
         starting_location = next_location
     return route
 
-# PARTE 3 - PONER EL MODELO EN PRODUCCIÓN
+# PARTE 3 - PONER EL MODELO EN PRODUCCIÓN 
+
+
+
+# TAREA - Mejor ruta teniendo en cuenta cualquier ubicación intermedia
+def intermediary_task(starting_location, intermediary_location, ending_location):
+    return route(starting_location, intermediary_location) + route(intermediary_location, ending_location)[1:]
+
+
 
 # Imprimir la ruta final
 print("Ruta Elegida:")
-print(route('E', 'G'))
+print(intermediary_task('E', 'K', 'G'))
 
 
 
